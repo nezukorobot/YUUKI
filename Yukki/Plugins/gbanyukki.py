@@ -44,7 +44,7 @@ async def ban_globally(_, message):
                 except Exception:
                     pass    
             ban_text = f"""
-__**New Global Ban on Yukki**__
+__**New Global Ban on Rikudo Senin**__
 **Origin:** {message.chat.title} [`{message.chat.id}`]
 **Sudo User:** {from_user.mention}
 **Banned User:** {user.mention}
@@ -89,7 +89,7 @@ __**New Global Ban on Yukki**__
                 except Exception:
                     pass    
             ban_text = f"""
-__**New Global Ban on Yukki**__
+__**New Global Ban on Rikudo Senin**__
 **Origin:** {message.chat.title} [`{message.chat.id}`]
 **Sudo User:** {from_user_mention}
 **Banned User:** {mention}
