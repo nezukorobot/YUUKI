@@ -25,7 +25,7 @@ async def useradd(_, message: Message):
             return await message.reply_text("Aleady a Sudo User.")
         added = await add_sudo(user.id)
         if added:
-            await message.reply_text(f"Added **{user.mention}** as a Super User for Yukki OwO")
+            await message.reply_text(f"Added **{user.mention}** as a Super User for Rikudo Senin OwO")
             return os.execvp("python3", ["python3", "-m", "Yukki"])
         await edit_or_reply(message, text="Something wrong happened, check logs.")  
         return
@@ -37,7 +37,7 @@ async def useradd(_, message: Message):
         return await message.reply_text("Already a Sudo User.")
     added = await add_sudo(user_id)
     if added:
-        await message.reply_text(f"Added **{mention}** as a Super User for Yukki OwO")
+        await message.reply_text(f"Added **{mention}** as a Super User for Rikudo Senin OwO")
         return os.execvp("python3", ["python3", "-m", "Yukki"])
     await edit_or_reply(message, text="Something wrong happened, check logs.")  
     return    
@@ -55,10 +55,10 @@ async def userdel(_, message: Message):
         user = (await app.get_users(user))
         from_user = message.from_user      
         if user.id not in await get_sudoers():
-            return await message.reply_text(f"Not a part of Yukki's Sudo.")        
+            return await message.reply_text(f"Not a part of Rikudo Senin's Sudo.")        
         removed = await remove_sudo(user.id)
         if removed:
-            await message.reply_text(f"Removed **{user.mention}** from Yukki's Sudo.")
+            await message.reply_text(f"Removed **{user.mention}** from Rikudo Senin's Sudo.")
             return os.execvp("python3", ["python3", "-m", "Yukki"])
         await message.reply_text(f"Something wrong happened.")
         return
@@ -66,10 +66,10 @@ async def userdel(_, message: Message):
     user_id = message.reply_to_message.from_user.id
     mention = message.reply_to_message.from_user.mention
     if user_id not in await get_sudoers():
-        return await message.reply_text(f"Not a part of Yukki's Sudo.")        
+        return await message.reply_text(f"Not a part of Rikudo Senin's Sudo.")        
     removed = await remove_sudo(user_id)
     if removed:
-        await message.reply_text(f"Removed **{mention}** from Yukki's Sudo.")
+        await message.reply_text(f"Removed **{mention}** from Rikudo Senin's Sudo.")
         return os.execvp("python3", ["python3", "-m", "Yukki"])
     await message.reply_text(f"Something wrong happened.")
                 
@@ -77,7 +77,7 @@ async def userdel(_, message: Message):
 @app.on_message(filters.command("sudolistp"))
 async def sudoers_list(_, message: Message):
     sudoers = await get_sudoers()
-    text = "**__Sudo Users List of Yukki:-__**\n\n"
+    text = "**__Sudo Users List of Rikudo Senin:-__**\n\n"
     for count, user_id in enumerate(sudoers, 1):
         try:                     
             user = await app.get_users(user_id)
