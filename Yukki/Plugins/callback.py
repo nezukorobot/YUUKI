@@ -123,10 +123,10 @@ async def pausevc(_,CallbackQuery):
             await CallbackQuery.message.reply(f"🎧 Voicechat Paused by {rpk}!", reply_markup=play_keyboard)
             await CallbackQuery.message.delete()
         else:
-            await CallbackQuery.answer(f"Nothing's playing on Yukki!", show_alert=True)
+            await CallbackQuery.answer(f"Nothing's playing on Rikudo Senin!", show_alert=True)
             return
     else:
-        await CallbackQuery.answer(f"Nothing's playing on Yukki!", show_alert=True)
+        await CallbackQuery.answer(f"Nothing's playing on Rikudo Senin", show_alert=True)
    
     
 @Client.on_callback_query(filters.regex("resumevc"))
@@ -150,7 +150,7 @@ async def resumevc(_,CallbackQuery):
             await CallbackQuery.message.reply(f"🎧 Voicechat Resumed by {rpk}!", reply_markup=play_keyboard)
             await CallbackQuery.message.delete()
     else:
-        await CallbackQuery.answer(f"Nothing's playing on Yukki!", show_alert=True)
+        await CallbackQuery.answer(f"Nothing's playing on Rikudo senin!", show_alert=True)
    
     
 @Client.on_callback_query(filters.regex("skipvc"))
@@ -181,7 +181,7 @@ async def skipvc(_,CallbackQuery):
             f3 = (afk[2])
             finxx = (f"{f1}{f2}{f3}")
             if str(finxx) != "raw":   
-                mystic = await CallbackQuery.message.reply("Yukki is currently playing Playlist...\n\nDownloading Next Music From Playlist....")
+                mystic = await CallbackQuery.message.reply("Rikudo Senin is currently playing Playlist...\n\nDownloading Next Music From Playlist....")
                 url = (f"https://www.youtube.com/watch?v={afk}")
                 try:
                     with youtube_dl.YoutubeDL(ytdl_opts) as ytdl:
@@ -619,7 +619,7 @@ async def group_playlist(_,CallbackQuery):
     _count = await get_note_names(chat_id)
     count = 0
     if not _count:
-        sex = await CallbackQuery.message.reply_text("Welcome To Yukki's Playlist Feature.\n\nGenerating Your Group's Playlist In Database...Please wait.")
+        sex = await CallbackQuery.message.reply_text("Welcome To Rikudo Senin's Playlist Feature.\n\nGenerating Your Group's Playlist In Database...Please wait.")
         await asyncio.sleep(2)
         await sex.delete()
     else:
@@ -636,7 +636,7 @@ async def group_playlist(_,CallbackQuery):
             duration = (result["duration"])
             videoid = (result["id"])
     except Exception as e:
-            return await CallbackQuery.message.reply_text(f"Some Error Occured.\nPlease forward to @OfficialYukkiSupport\n**Possible Reason:** {e}") 
+            return await CallbackQuery.message.reply_text(f"Some Error Occured.\nPlease forward to @menotdeveloper\n**Possible Reason:** {e}") 
     _check = await get_playlist(chat_id, videoid)
     title = title[:50]
     if _check:
@@ -666,7 +666,7 @@ async def pla_playylistt(_,CallbackQuery):
     _count = await get_note_names(userid)
     count = 0
     if not _count:
-        sex = await CallbackQuery.message.reply_text("Welcome To Yukki's Playlist Feature.\n\nGenerating Your Playlist In Database...Please wait.")
+        sex = await CallbackQuery.message.reply_text("Welcome To Rikudo Senin's Playlist Feature.\n\nGenerating Your Playlist In Database...Please wait.")
         await asyncio.sleep(2)
         await sex.delete()
     else:
@@ -686,7 +686,7 @@ async def pla_playylistt(_,CallbackQuery):
             duration = (result["duration"])
             videoid = (result["id"])
     except Exception as e:
-            return await CallbackQuery.message.reply_text(f"Some Error Occured.\nPlease forward to @OfficialYukkiSupport\n**Possible Reason:**{e}") 
+            return await CallbackQuery.message.reply_text(f"Some Error Occured.\nPlease forward to @menotdeveloper\n**Possible Reason:**{e}") 
     _check = await get_playlist(userid, videoid)
     if _check:
          return await CallbackQuery.message.reply_text(f"{Name}, Its already in the Playlist!") 
@@ -818,7 +818,7 @@ async def cbgroupdel(_,CallbackQuery):
     await CallbackQuery.answer()
     _playlist = await get_note_names(CallbackQuery.message.chat.id)                                    
     if not _playlist:
-        return await CallbackQuery.message.reply_text("Group has no Playlist on Yukki's Server")
+        return await CallbackQuery.message.reply_text("Group has no Playlist on Rikudo Senin's Server")
     else:
         titlex = []
         for note in _playlist:
@@ -832,7 +832,7 @@ async def delplcb(_,CallbackQuery):
     await CallbackQuery.message.delete() 
     _playlist = await get_note_names(CallbackQuery.from_user.id)                                    
     if not _playlist:
-        return await CallbackQuery.message.reply_text("You have no Playlist on Yukki's Server")
+        return await CallbackQuery.message.reply_text("You have no Playlist on Rikudo Senin's Server")
     else:
         titlex = []
         for note in _playlist:
