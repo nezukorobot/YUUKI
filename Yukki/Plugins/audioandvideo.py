@@ -348,7 +348,7 @@ async def boom(_,CallbackQuery):
 👀**Views:** __{x["view_count"]}__
 🎥**Channel Name:** {x["uploader"]}
 
-__Youtube Inline Download Powered By Yukki__ """    
+__Youtube Inline Download Powered By Rikudo Senin__ """    
     link = (x["webpage_url"])
     channel = (x["channel_url"])
     perf = (x['uploader'])
