@@ -44,7 +44,7 @@ async def pause_cmd(_, message):
     thumb ="cache/Playlist.jpg"
     await message.reply_photo(
     photo=thumb, 
-    caption=("**__Yukki's Playlist Feature__**\n\nSelect The Playlist, You want to check!"),    
+    caption=("**__Rikudo Senin's Playlist Feature__**\n\nSelect The Playlist, You want to check!"),    
     reply_markup=play_list_keyboard) 
     return 
 
@@ -99,7 +99,7 @@ async def delgroupplaylist(_, message):
     else:
          _playlist = await get_note_names(message.chat.id)
     if not _playlist:
-        await message.reply_text("Group has no Playlist on Yukki's Server")
+        await message.reply_text("Group has no Playlist on Rikudo Senin's Server")
     else:
         titlex = []
         j = 0
