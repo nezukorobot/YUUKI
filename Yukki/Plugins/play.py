@@ -51,11 +51,11 @@ def time_to_seconds(time):
         int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":")))
     )
 
-@Client.on_message(command(["play", "play@@YukkixPersonalBot"]))
+@Client.on_message(command(["play", "play@Rikudo_senin_bot"]))
 async def play(_, message: Message):
     chat_id = message.chat.id
     if not await is_served_chat(chat_id):
-        await message.reply_text(f"**__Not in allowed chats.__**\n\nYukki Private is only for allowed chats. Ask any Sudo User to allow your chat.\nCheck Sudo Users List [From Here](https://t.me/{BOT_USERNAME}?start=sudolist)")
+        await message.reply_text(f"**__Not in allowed chats.__**\n\nRikudo Senin is only for allowed chats. Ask any Sudo User to allow your chat.\nCheck Sudo Users List [From Here](https://t.me/{BOT_USERNAME}?start=sudolist)")
         return await app.leave_chat(chat_id)  
     if message.sender_chat:
         return await message.reply_text("You're an __Anonymous Admin__!\nRevert back to User Account From Admin Rights.")  
@@ -70,7 +70,7 @@ async def play(_, message: Message):
         return await message.reply_text(f"Bot is under Maintenance. Sorry for the inconvenience!")
     a = await app.get_chat_member(message.chat.id , BOT_ID)
     if a.status != "administrator":
-        await message.reply_text(f"I need to be admin with some permissions:\n\n- **can_manage_voice_chats:** To manage voice chats\n- **can_delete_messages:** To delete Yukki's Searched Waste\n- **can_invite_users**: For inviting assistant to chat\n**can_restrict_members**: For Protecting Yukki from Spammers.")
+        await message.reply_text(f"I need to be admin with some permissions:\n\n- **can_manage_voice_chats:** To manage voice chats\n- **can_delete_messages:** To delete Rikudo Senin's Searched Waste\n- **can_invite_users**: For inviting assistant to chat\n**can_restrict_members**: For Protecting Rikudo Senin from Spammers.")
         return
     if not a.can_manage_voice_chats:
         await message.reply_text(
@@ -95,7 +95,7 @@ async def play(_, message: Message):
     try:
         b = await app.get_chat_member(message.chat.id , ASSID) 
         if b.status == "kicked":
-            await message.reply_text(f"{ASSNAME}(@{ASSUSERNAME}) is banned in your chat **{chat_title}**\n\nUnban it first to use yukki")
+            await message.reply_text(f"{ASSNAME}(@{ASSUSERNAME}) is banned in your chat **{chat_title}**\n\nUnban it first to use Rikudo senin")
             return
     except UserNotParticipant:
         if message.chat.username:
@@ -276,7 +276,7 @@ async def play(_, message: Message):
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
         hmo = await message.reply_photo(
             photo=thumb, 
-            caption=(f"**YUKKI X PERSONAL MUSIC BOT**\n\n1️⃣<b>{title1}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n2️⃣<b>{title2}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n3️⃣<b>{title3}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n4️⃣<b>{title4}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n5️⃣<b>{title5}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>"),    
+            caption=(f"**Rikudo Senin**\n\n1️⃣<b>{title1}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n2️⃣<b>{title2}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n3️⃣<b>{title3}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n4️⃣<b>{title4}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n5️⃣<b>{title5}</b>\n  ┗  🔗 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>"),    
             reply_markup=InlineKeyboardMarkup(buttons),
         )  
         disable_web_page_preview=True
