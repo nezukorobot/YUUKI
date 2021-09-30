@@ -7,7 +7,7 @@ RUN apt-get update -y && apt-get upgrade -y && \
 
 RUN apt-get install git ffmpeg python3-pip -y
 RUN pip3 install -U pip
-RUN git clone http://github.com/xxMUNNAxx/YUUKI/yukki/bot
+RUN git clone http://github.com/xxMUNNAxx/YUUKI /yukki/bot
 
 WORKDIR /yukki/bot
 
