@@ -78,7 +78,7 @@ async def start(_, message: Message):
     await message.reply_text(f"Thanks for having me in {message.chat.title}.\nRikudo Senin is alive.\n\nFor any assistance or help, checkout our support group and channel.", reply_markup=InlineKeyboardMarkup(out[1]))
     return
         
-@Client.on_message(filters.private & filters.incoming & filters.command("vcstart"))
+@Client.on_message(filters.private & filters.incoming & filters.command("start"))
 async def play(_, message: Message):
     if len(message.command) == 1:
         user_id = message.from_user.id
