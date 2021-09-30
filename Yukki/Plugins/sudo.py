@@ -37,7 +37,7 @@ async def useradd(_, message: Message):
         return await message.reply_text("Already a Sudo User.")
     added = await add_sudo(user_id)
     if added:
-        await message.reply_text(f"Added **{mention}** as a Super User for Rikudo Senin OwO")
+        await message.reply_text(f"Added **{mention}** as a Super User for Munna X Music OwO")
         return os.execvp("python3", ["python3", "-m", "Yukki"])
     await edit_or_reply(message, text="Something wrong happened, check logs.")  
     return    
@@ -55,10 +55,10 @@ async def userdel(_, message: Message):
         user = (await app.get_users(user))
         from_user = message.from_user      
         if user.id not in await get_sudoers():
-            return await message.reply_text(f"Not a part of Rikudo Senin's Sudo.")        
-        removed = await remove_sudo(user.id)
+            return await message.reply_text(f"Not a part of Munna X Music's Sudo.")        
+        removed = await remove_sudo(user.id)Munna
         if removed:
-            await message.reply_text(f"Removed **{user.mention}** from Rikudo Senin's Sudo.")
+            await message.reply_text(f"Removed **{user.mention}** from Munna X Music's Sudo.")
             return os.execvp("python3", ["python3", "-m", "Yukki"])
         await message.reply_text(f"Something wrong happened.")
         return
