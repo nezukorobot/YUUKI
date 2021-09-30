@@ -68,7 +68,7 @@ async def welcome(_, message: Message):
         except:
             return
 
-@Client.on_message(filters.group & filters.command(["vcstart", "vchelp"]))
+@Client.on_message(filters.group & filters.command(["start", "help"]))
 async def start(_, message: Message):
     chat_id = message.chat.id
     if not await is_served_chat(chat_id):
