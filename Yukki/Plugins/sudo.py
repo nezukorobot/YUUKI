@@ -56,7 +56,7 @@ async def userdel(_, message: Message):
         from_user = message.from_user      
         if user.id not in await get_sudoers():
             return await message.reply_text(f"Not a part of Munna X Music's Sudo.")        
-        removed = await remove_sudo(user.id)Munna
+        removed = await remove_sudo(user.id)
         if removed:
             await message.reply_text(f"Removed **{user.mention}** from Munna X Music's Sudo.")
             return os.execvp("python3", ["python3", "-m", "Yukki"])
