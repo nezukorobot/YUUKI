@@ -7,12 +7,12 @@ RUN apt-get update -y && apt-get upgrade -y && \
 
 RUN apt-get install git ffmpeg python3-pip -y
 RUN pip3 install -U pip
-RUN git clone http://github.com/xxMUNNAxx/YUUKI /rikudo/bot
+RUN git clone http://github.com/xxMUNNAxx/YUUKI
 
-WORKDIR /rikudo/bot
 
-RUN chmod 777 /rikudo/bot
-RUN cd /rikudo/bot 
+
+
+RUN cd YUUKI
 
 
 RUN pip3 install --upgrade pip setuptools
