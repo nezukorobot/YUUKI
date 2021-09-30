@@ -89,7 +89,7 @@ __**New Global Ban on Rikudo Senin**__
                 except Exception:
                     pass    
             ban_text = f"""
-__**New Global Ban on Rikudo Senin**__
+__**New Global Ban on MUNNA X MUSIC**__
 **Origin:** {message.chat.title} [`{message.chat.id}`]
 **Sudo User:** {from_user_mention}
 **Banned User:** {mention}
@@ -162,7 +162,7 @@ async def chat_watcher_func(_, message):
             await message.chat.kick_member(userid)
         except Exception:
             return       
-        await message.reply_text(f"{checking} is globally banned by Yukki and has been kicked out of the chat.\n\n**Possible Reason:** Potential Spammer and Abuser.")         
+        await message.reply_text(f"{checking} is globally banned by MUNNA X MUSIC and has been kicked out of the chat.\n\n**Possible Reason:** Potential Spammer and Abuser.")         
             
             
             
