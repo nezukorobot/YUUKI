@@ -21,28 +21,28 @@ from Yukki.YukkiUtilities.database.sudo import (get_sudoers, get_sudoers, remove
 def start_pannel():  
     buttons  = [
             [
-                InlineKeyboardButton(text="🎚 Commands Menu", url="https://telegra.ph/Rikudo-Senin-09-29")
+                InlineKeyboardButton(text="🎚 Commands Menu", url="https://telegra.ph/Hi-Welcome-To-Munna-X-Musics-Command-List-09-30")
             ],
             [ 
-                InlineKeyboardButton(text="📨Official Channel", url="https://t.me/mrdark_genuine"),
-                InlineKeyboardButton(text="📨Support Group", url="https://t.me/menotdeveloper")
+                InlineKeyboardButton(text="📨Official Channel", url="https://t.me/MUNNAxMUSIC"),
+                InlineKeyboardButton(text="📨Support Group", url="https://t.me/XF0RCE_TEAM")
             ],
     ]
-    return "🎛  **This is Rikudo Senin Music Bot**", buttons
+    return "🎛  **This is Munna X Music Bot**", buttons
 
 pstart_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🧰 Commands List", url=f"https://telegra.ph/Rikudo-Senin-09-29")],
+                        "🧰 Commands List", url=f"https://telegra.ph/Hi-Welcome-To-Munna-X-Musics-Command-List-09-30")],
                 [
                     InlineKeyboardButton(
-                        "📲 Channel", url=f"https://t.me/mrdark_genuine"), 
+                        "📲 Channel", url=f"https://t.me/MUNNAXMUSIC"), 
                     InlineKeyboardButton(
-                        "💬 Support", url=f"https://t.me/menotdeveloper")
+                        "💬 Support", url=f"https://t.me/XF0RCE_TEAM")
                 ],[
                     InlineKeyboardButton(
-                        "➕ Add Me To Your Group", url=f"https://t.me/Rikudo_senin_bot?startgroup=true")
+                        "➕ Add Me To Your Group", url=f"https://t.me/MUNNA_VC_ROBOT?startgroup=true")
                 ]
             ]
         )
@@ -51,19 +51,21 @@ welcome_captcha_group = 2
 async def welcome(_, message: Message):
     chat_id = message.chat.id
     if not await is_served_chat(chat_id):
-        await message.reply_text(f"**__Not in allowed chats.__**\n\nRikudo Senin is only for allowed chats. Ask any Sudo User to allow your chat.\nCheck Sudo Users List [From Here](https://t.me/{BOT_USERNAME}?start=sudolist)")
+        await message.reply_text(f"**__Not in allowed chats.__**\n\nMunna X Music is only for allowed chats. Ask any Sudo User to allow your chat.\nCheck Sudo Users List [From Here](https://t.me/{BOT_USERNAME}?start=sudolist)")
         return await app.leave_chat(chat_id)
     for member in message.new_chat_members:
         try:
             if member.id in OWNER:
                 return await message.reply_text(f"Call the Avengers, My Owner[{member.mention}] has just joined your chat.")
             if member.id in SUDOERS:
-                return await message.reply_text(f"Tighten your seatbelts, A member of Rikudo Senin's SudoUser[{member.mention}] has just joined your chat.")
+                return await message.reply_text(f"Tighten your seatbelts, A member of Munna X Music SudoUser[{member.mention}] has just joined your chat.")
             if member.id == ASSID:
                 await remove_active_chat(chat_id)
             if member.id == BOT_ID:
                 out = start_pannel()
-                await message.reply_text(f"Welcome To Rikudo Senin\n\nPromote me as administrator in your group otherwise I will not function properly.", reply_markup=InlineKeyboardMarkup(out[1]))
+                member of Rikudo Senin's SudoUser[{member.mention}] has just joined your chat.")
+
+                await message.reply_text(f"Wme To Rikudo Senin\n\nPromote me as administrator in your group otherwise I will not function properly.", reply_markup=InlineKeyboardMarkup(out[1]))
                 return
         except:
             return
