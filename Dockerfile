@@ -14,7 +14,7 @@ WORKDIR /yukki/bot
 RUN chmod 777 /yukki/bot
 RUN cd /yukki/bot 
 
-ENV PIP_NO_CACHE_DIR
+
 RUN pip3 install --upgrade pip setuptools
 RUN pip3 install --no-cache-dir -U -r requirements.txt
 
