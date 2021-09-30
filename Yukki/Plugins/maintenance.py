@@ -5,9 +5,9 @@ from Yukki.YukkiUtilities.database.onoff import (is_on_off, add_on, add_off)
 from ..YukkiUtilities.helpers.filters import command
 
 
-@Client.on_message(command("Rikudop") & filters.user(SUDOERS))
+@Client.on_message(command("maintenance") & filters.user(SUDOERS))
 async def smex(_, message):
-    usage = "**Usage:**\n/Rikudop [enable|disable]"
+    usage = "**Usage:**\n/maintenance [enable|disable]"
     if len(message.command) != 2:
         return await message.reply_text(usage)
     chat_id = message.chat.id
@@ -16,7 +16,7 @@ async def smex(_, message):
     if state == "enable":
         user_id = 1
         await add_on(user_id)
-        await message.reply_text("Rikudo Senin Enabled for Maintenance")
+        await message.reply_text("MUNNA X MUSIC Enabled for Maintenance")
     elif state == "disable":
         user_id = 1
         await add_off(user_id)
