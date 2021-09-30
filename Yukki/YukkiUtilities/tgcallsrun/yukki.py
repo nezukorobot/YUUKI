@@ -172,4 +172,4 @@ Downloading....
         print(e) 
 
 
-run = pytgcalls.run
+run = pytgcalls.start()
